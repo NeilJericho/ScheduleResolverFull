@@ -1,4 +1,5 @@
 class ScheduleAnalysis {
+
   final String conflicts;
   final String rankedTasks;
   final String recommendedSchedule;

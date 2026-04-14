@@ -4,10 +4,10 @@ import 'package:uuid/uuid.dart';
 
 class ScheduleProvider extends ChangeNotifier {
 
-  final List<TaskModel> _task = [];
+  final List<TaskModel> _tasks = [];
   final Uuid _uuid = const Uuid();
 
-  List<TaskModel> get task => _task;
+  List<TaskModel> get tasks => _tasks;
 
 
   void addTask({
@@ -30,13 +30,12 @@ class ScheduleProvider extends ChangeNotifier {
         estimatedEffortHours: estimatedEffortHours,
         energyLevel: energyLevel,
     );
-
-    _task.add(newTask);
+    _tasks.add(newTask);
     notifyListeners();
   }
 
   void removeTask(String id){
-    _task.removeWhere((task) => task.id == id);
+    _tasks.removeWhere((task) => task.id == id);
     notifyListeners();
   }
 }
